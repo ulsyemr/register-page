@@ -6,4 +6,4 @@
     and keep the user records to mailchimp with the API.
     I keep my project in heroku.
     
-    [`https://gentle-wave-36162.herokuapp.com/`]()
+[`https://gentle-wave-36162.herokuapp.com/`]()
