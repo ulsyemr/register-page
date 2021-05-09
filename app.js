@@ -3,7 +3,7 @@ const request = require("request");
 const bodyParser = require("body-parser");
 const { urlencoded, json } = require("body-parser");
 const https = require("https");
-
+require("dotenv").config();
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -37,7 +37,7 @@ app.post("/", (req, res) => {
 
   const options = {
     method: "POST",
-    auth: "emre1:d4411a3e06ccdb817d9123e1977761eb-us1",
+    auth: `emre1:${process.env.API_KEY}`,
   };
 
   const request = https.request(url, options, (response) => {
@@ -62,10 +62,3 @@ app.post("/failure", (req, res) => {
 app.listen(process.env.PORT || 3000, () =>
   console.log("listening on port 3000")
 );
-
-// API key
-
-// d4411a3e06ccdb817d9123e1977761eb-us1
-// List id
-
-// b875cf3bdd
