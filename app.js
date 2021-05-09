@@ -37,7 +37,7 @@ app.post("/", (req, res) => {
 
   const options = {
     method: "POST",
-    auth: "emre1:ad4411a3e06ccdb817d9123e1977761eb-us1",
+    auth: "emre1:d4411a3e06ccdb817d9123e1977761eb-us1",
   };
 
   const request = https.request(url, options, (response) => {
@@ -51,7 +51,7 @@ app.post("/", (req, res) => {
       console.log(JSON.parse(data));
     });
   });
-  // request.write(jsonData);
+  request.write(jsonData);
   request.end();
 });
 
@@ -59,7 +59,9 @@ app.post("/failure", (req, res) => {
   res.redirect("/");
 });
 
-app.listen(3000, () => console.log("listening on port 3000"));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("listening on port 3000")
+);
 
 // API key
 
